@@ -322,6 +322,20 @@ class General(commands.Cog, name="general"):
             )
         )
 
+    @commands.hybrid_command(
+        name="echo",
+        description="This command makes the bot repeat whateaver you texted.",
+    )
+    async def echo(self, context: Context, message: str) -> None:
+        """
+        This command makes the bot repeat whateaver you texted.
+
+        :param context: The application command context.
+        :param message: The message the bot repeat.
+        """
+        
+        await context.send(message)
+
 
 async def setup(bot) -> None:
     await bot.add_cog(General(bot))
