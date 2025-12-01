@@ -19,6 +19,7 @@ class Moderation(commands.Cog, name="moderation"):
     def __init__(self, bot) -> None:
         self.bot = bot
 
+    '''
     @commands.hybrid_command(
         name="kick",
         description="Kick a user out of the server.",
@@ -69,7 +70,9 @@ class Moderation(commands.Cog, name="moderation"):
                     color=0xE02B2B,
                 )
                 await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="nick",
         description="Change the nickname of a user on a server.",
@@ -106,7 +109,9 @@ class Moderation(commands.Cog, name="moderation"):
                 color=0xE02B2B,
             )
             await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="ban",
         description="Bans a user from the server.",
@@ -158,7 +163,9 @@ class Moderation(commands.Cog, name="moderation"):
                 color=0xE02B2B,
             )
             await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_group(
         name="warning",
         description="Manage warnings of a user on a server.",
@@ -176,7 +183,9 @@ class Moderation(commands.Cog, name="moderation"):
                 color=0xE02B2B,
             )
             await context.send(embed=embed)
+    '''
 
+    '''
     @warning.command(
         name="add",
         description="Adds a warning to a user in the server.",
@@ -217,7 +226,9 @@ class Moderation(commands.Cog, name="moderation"):
             await context.send(
                 f"{member.mention}, you were warned by **{context.author}**!\nReason: {reason}"
             )
+    '''
 
+    '''
     @warning.command(
         name="remove",
         description="Removes a warning from a user in the server.",
@@ -246,7 +257,9 @@ class Moderation(commands.Cog, name="moderation"):
             color=0xBEBEFE,
         )
         await context.send(embed=embed)
-
+    '''
+    
+    '''
     @warning.command(
         name="list",
         description="Shows the warnings of a user in the server.",
@@ -270,15 +283,16 @@ class Moderation(commands.Cog, name="moderation"):
                 description += f"• Warned by <@{warning[2]}>: **{warning[3]}** (<t:{warning[4]}>) - Warn ID #{warning[5]}\n"
         embed.description = description
         await context.send(embed=embed)
-
+    '''
+    
     @commands.hybrid_command(
-        name="purge",
+        name="clear",
         description="Delete a number of messages.",
     )
     @commands.has_guild_permissions(manage_messages=True)
     @commands.bot_has_permissions(manage_messages=True)
     @app_commands.describe(amount="The amount of messages that should be deleted.")
-    async def purge(self, context: Context, amount: int) -> None:
+    async def clear(self, context: Context, amount: int) -> None:
         """
         Delete a number of messages.
 
@@ -295,6 +309,7 @@ class Moderation(commands.Cog, name="moderation"):
         )
         await context.channel.send(embed=embed)
 
+    '''
     @commands.hybrid_command(
         name="hackban",
         description="Bans a user without the user having to be in the server.",
@@ -332,7 +347,9 @@ class Moderation(commands.Cog, name="moderation"):
                 color=0xE02B2B,
             )
             await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="archive",
         description="Archives in a text file the last messages with a chosen limit of messages.",
@@ -369,7 +386,7 @@ class Moderation(commands.Cog, name="moderation"):
         f = discord.File(log_file)
         await context.send(file=f)
         os.remove(log_file)
-
+    '''
 
 async def setup(bot) -> None:
     await bot.add_cog(Moderation(bot))

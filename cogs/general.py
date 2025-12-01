@@ -105,6 +105,7 @@ class General(commands.Cog, name="general"):
             )
         await context.send(embed=embed)
 
+    '''
     @commands.hybrid_command(
         name="botinfo",
         description="Get some useful (or not) information about the bot.",
@@ -131,7 +132,9 @@ class General(commands.Cog, name="general"):
         )
         embed.set_footer(text=f"Requested by {context.author}")
         await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="serverinfo",
         description="Get some useful (or not) information about the server.",
@@ -162,6 +165,7 @@ class General(commands.Cog, name="general"):
         embed.add_field(name=f"Roles ({len(context.guild.roles)})", value=roles)
         embed.set_footer(text=f"Created at: {context.guild.created_at}")
         await context.send(embed=embed)
+    '''
 
     @commands.hybrid_command(
         name="ping",
@@ -200,6 +204,7 @@ class General(commands.Cog, name="general"):
         except discord.Forbidden:
             await context.send(embed=embed)
 
+    '''
     @commands.hybrid_command(
         name="server",
         description="Get the invite link of the discord server of the bot for some support.",
@@ -219,7 +224,9 @@ class General(commands.Cog, name="general"):
             await context.send("I sent you a private message!")
         except discord.Forbidden:
             await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="8ball",
         description="Ask any question to the bot.",
@@ -261,7 +268,9 @@ class General(commands.Cog, name="general"):
         )
         embed.set_footer(text=f"The question was: {question}")
         await context.send(embed=embed)
+    '''
 
+    '''
     @commands.hybrid_command(
         name="bitcoin",
         description="Get the current price of bitcoin.",
@@ -291,7 +300,9 @@ class General(commands.Cog, name="general"):
                         color=0xE02B2B,
                     )
                 await context.send(embed=embed)
+    '''
 
+    '''
     @app_commands.command(
         name="feedback", description="Submit a feedback for the owners of the bot"
     )
@@ -321,21 +332,7 @@ class General(commands.Cog, name="general"):
                 color=0xBEBEFE,
             )
         )
-
-    @commands.hybrid_command(
-        name="echo",
-        description="This command makes the bot repeat whateaver you texted.",
-    )
-    async def echo(self, context: Context, message: str) -> None:
-        """
-        This command makes the bot repeat whateaver you texted.
-
-        :param context: The application command context.
-        :param message: The message the bot repeat.
-        """
-        
-        await context.send(message)
-
+    '''
 
 async def setup(bot) -> None:
     await bot.add_cog(General(bot))
