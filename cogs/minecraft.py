@@ -45,7 +45,7 @@ class Minecraft(commands.Cog, name="minecraft"):
             embed.add_field(name="Players", value=f"{status.players.online}/{status.players.max}", inline=True)
             
             if status.players.sample:
-                player_names = [p.name for p.sample]
+                player_names = [p.name for p in status.players.sample]
                 # Discord fields have a 1024 char limit; truncate if necessary
                 players_str = "\n".join(player_names)
                 if len(players_str) > 1000:
