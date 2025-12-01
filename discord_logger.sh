@@ -3,8 +3,8 @@
 source .env
 
 # Configuration
-WEBHOOK_URL="$(WEBHOOK_URL_ENV)"
-LOG_FILE="/home/luis/arch-daemon/discord.log"
+WEBHOOK_URL="${WEBHOOK_URL_ENV}"
+LOG_FILE="$PWD/discord.log"
 
 # Function to send to Discord
 send_discord() {
