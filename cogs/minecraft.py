@@ -65,9 +65,9 @@ class Minecraft(commands.Cog, name="minecraft"):
 
     @commands.hybrid_command(
         name="mc",
-        description="Send a command to the Minecraft server console (Admin only)."
+        description="Send a command to the Minecraft server console (Owner only)."
     )
-    @commands.has_permissions(administrator=True) 
+    @commands.is_owner()
     @app_commands.describe(command="The command to run (without /)")
     async def mccmd(self, context: commands.Context, *, command: str) -> None:
         """
