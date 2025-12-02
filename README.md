@@ -48,33 +48,23 @@ To set up the bot, you will need to configure environment variables.
 1.  **Rename `.env.example` to `.env`** and replace the placeholders with your actual values.
 2.  **Add all required environment variables** to your `.env` file or as system environment variables:
 
-| Variable | Description | Source |
-| :--- | :--- | :--- |
-| `TOKEN` | Your Discord Bot Token. | (Standard) |
-| `PREFIX` | The prefix for normal commands (e.g., `!` or `$` for fallback). | (Standard) |
-| `INVITE_LINK` | The full invite URL for your bot. | (Standard) |
-| `WEBHOOK_URL_ENV` | The Discord Webhook URL for the log forwarder script. | `discord_logger.sh` |
-| `MC_HOST` | The internal IP or hostname of your Minecraft server. | `cogs/minecraft.py` |
-| `MC_PORT` | The port for Minecraft status checks (default: `25565`). | `cogs/minecraft.py` |
-| `RCON_PORT` | The port for RCON commands (default: `25575`). | `cogs/minecraft.py` |
-| `RCON_PASSWORD` | The RCON password for console access. | `cogs/minecraft.py` |
-| `MC_PUBLIC_ADDRESS` | The public address string to show users for joining. | `cogs/minecraft.py` |
+| Variable | Descriptioni |
+| :--- | :--- | 
+| `TOKEN` | Your Discord Bot Token. |
+| `PREFIX` | The prefix for normal commands (e.g., `!` or `$` for fallback). | 
+| `INVITE_LINK` | The full invite URL for your bot. |
+| `WEBHOOK_URL_ENV` | The Discord Webhook URL for the log forwarder script. | 
+| `MC_HOST` | The internal IP or hostname of your Minecraft server. | 
+| `MC_PORT` | The port for Minecraft status checks (default: `25565`). | 
+| `RCON_PORT` | The port for RCON commands (default: `25575`). | 
+| `RCON_PASSWORD` | The RCON password for console access. | 
+| `MC_PUBLIC_ADDRESS` | The public address string to show users for joining. | 
 
 ---
 
 ## ▶️ How to Start
 
-### The _"usual"_ way
-
-1.  Install requirements (ensure you have Python 3.12 or newer):
-    ```
-    python -m pip install -r requirements.txt
-    ```
-2.  Start the bot:
-    ```
-    python bot.py
-    ```
-3.  (Optional) To start the log forwarder, run the script (requires environment variables to be sourced, like via `source .env` or Docker):
+To start the log forwarder, run the script (requires environment variables to be sourced, like via `source .env` or Docker):
     ```
     bash discord_logger.sh
     ```
