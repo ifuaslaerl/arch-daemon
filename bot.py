@@ -169,7 +169,12 @@ class DiscordBot(commands.Bot):
         """
         Setup the game status task of the bot.
         """
-        statuses = ["with you!", "with Krypton!", "with humans!"]
+        statuses = ["Playing Minecraft at super-orbit.gl.joinmc.link", \
+                    "I use arch btw", \
+                    "Soon I'll be up there", \
+                    "I was made by ifuaslaerl", \
+                    "A Daemon is a program that runs in the background"]
+
         await self.change_presence(activity=discord.Game(random.choice(statuses)))
 
     @status_task.before_loop
